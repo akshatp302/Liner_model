@@ -5,16 +5,15 @@ from torch import nn
 
 class Liner_model(nn.Module):
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self):
+        super().__init__()
         
-        self.weight = nn.Parameter()
-    
-    # def __init__(self,x_user_input,y_user_input):
-    #     self.input_data = x_user_input
-    #     self.label_data = y_user_input
-    #     super
+        self.linear_layer = nn.Linear(in_features=1,
+                                      out_features=1)
         
+    def forward (self,x):
+         
+        return self.linear_layer(x)
         
             
     def data_loader(self):
